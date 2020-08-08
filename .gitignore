@@ -1,1 +1,8 @@
 node_modules
+
+# Editors
+.vscode
+
+# Build
+testtask1/build
+testtask2/build
