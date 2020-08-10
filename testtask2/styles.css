@@ -132,24 +132,24 @@ h2 {
 .box_type_yellow {
   background: #feef33;
 }
-.box_type_active {
+.box_state_active {
   opacity: 1;
   /* background: #fff; */
   /* transition: box-shadow 0.2s ease-in-out; */
   /* animation: opacity 2.5s ease-in-out; */
   /* transition: 0.4s ease; */
 }
-.box_type_active.box_type_red {
+.box_state_active.box_type_red {
   box-shadow: -18px 0 100px red inset;
   background: #ff8f2b;
 }
-.box_type_active.box_type_blue {
+.box_state_active.box_type_blue {
   box-shadow: -18px -18px 100px #00498b inset;
 }
-.box_type_active.box_type_green {
+.box_state_active.box_type_green {
   box-shadow: 18px 18px 100px green inset;
 }
-.box_type_active.box_type_yellow {
+.box_state_active.box_type_yellow {
   box-shadow: 18px -18px 100px orange inset;
 }
 .game__start {
