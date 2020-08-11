@@ -77,12 +77,12 @@
             </select>
           </label>
         </li>
-        <li class="form__item" :class="{ 'form__item_state_error': $v.form.name.$error }">
+        <li class="form__item" :class="{ 'form__item_state_error': $v.form.doNotSendSMS.$error }">
           <label class="form__label">
             Не отправлять СМС
             <input
               class="form__checkbox"
-              v-model.trim="$v.form.name.$model"
+              v-model.trim="$v.form.doNotSendSMS.$model"
               type="checkbox"
             />
           </label>
@@ -92,7 +92,7 @@
 
     <fieldset class="form__fieldset">
       <legend class="form__legend">Адрес</legend>
-      <ul class="form">
+      <ul class="form__list">
         <li class="form__item" :class="{ 'form__item_state_error': $v.form.postalCode.$error }">
           <label class="form__label">
             Индекс
@@ -135,7 +135,7 @@
     </fieldset>
     <fieldset class="form__fieldset">
       <legend class="form__legend">Паспорт</legend>
-      <ul class="form">
+      <ul class="form__list">
         <li class="form__item" :class="{ 'form__item_state_error': $v.form.passportType.$error }">
           <label class="form__label">
             Тип документа
@@ -178,7 +178,6 @@
             Кем выдан
             <input class="form__input" v-model.trim="$v.form.passportIssuedBy.$model" />
           </label>
-          <div class="form__error" v-if="!$v.form.surname.alpha">Только буквы</div>
         </li>
         <li class="form__item" :class="{ 'form__item_state_error': $v.form.passportDate.$error }">
           <label class="form__label">
@@ -203,7 +202,7 @@ import {
   required,
 } from "vuelidate/lib/validators";
 
-const lettersReg = /^[а-яёА-ЯЁa-zA-Z]*$/;
+const lettersReg = /^[а-яёА-ЯЁa-zA-Z-]*$/;
 
 export default {
   data() {
@@ -217,6 +216,7 @@ export default {
         gender: 1,
         customergroup: "",
         doctor: "",
+        doNotSendSMS: false,
         postalCode: "",
         country: "",
         region: "",
@@ -250,6 +250,7 @@ export default {
       gender: {},
       customergroup: { required },
       doctor: {},
+      doNotSendSMS: {},
       postalCode: {},
       country: {},
       region: {},
@@ -279,8 +280,7 @@ export default {
     submit() {
       this.$v.form.$touch();
       if (this.$v.form.$error) return;
-      // to form submit after this
-      alert("Form submitted");
+      alert("Форма отправлена");
     },
   },
 };
