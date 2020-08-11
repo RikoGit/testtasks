@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.root {
+  background: #4e4444;
+  display: grid;
+  min-height: 100vh;
+}
+.root__header {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.root__title {
+  margin: 0;
+  padding: 20px 15px;
+}
+.form {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.form__fieldset {
+  padding: 10px;
+  margin: 15px;
+  border: 1px solid #a8a8a8;
+  border-radius: 5px;
+  align-self: flex-start;
+  width: 320px;
+}
+.form__legend {
+  padding: 10px;
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+}
+.form__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.form__item {
+  margin: 0 0 20px 0;
+}
+.form__label {
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 0.3125rem;
+  margin: 0 15px;
+  display: block;
+}
+.form__input,
+.form__select,
+.form__textarea {
+  margin: 5px 0;
+  font-size: 16px;
+  font-weight: 300;
+  color: #374853;
+  line-height: 2.375rem;
+  min-height: 2.375rem;
+  position: relative;
+  border: 2px solid #e8e8e8;
+  border-radius: 5px;
+  background: #fff;
+  padding: 0 0.8125rem;
+  width: 100%;
+  transition: border 0.1s ease;
+  box-sizing: border-box;
+}
+.form__input:hover,
+.form__select:hover,
+.form__textarea:hover {
+  border-color: #cfcfcf;
+}
+.form__input:focus,
+.form__select:focus,
+.form__textarea:focus {
+  border-color: yellow !important;
+  outline: none;
+}
+.form__select option {
+  padding: 5px 0;
+}
+
+.form__required {
+}
+.form__error {
+  position: absolute;
+  margin: -2px 0 0 15px;
+  font-size: 13px;
+  line-height: 1;
+  display: none;
+}
+.form__item_state_error .form__error {
+  display: block;
+  color: #f57f6c;
+}
+.form__item_state_error .form__input {
+  border-color: red;
+}
+.form__button {
+  position: absolute;
+  bottom: 0;
+  background: darkolivegreen;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 26px;
+  color: #fff;
+  border: none;
+}
+.form__button:focus {
+  border: none;
+  outline: none;
+}

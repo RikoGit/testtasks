@@ -15,7 +15,7 @@
       <h2 class="round__header">{{ this.round }}</h2>
     </section>
     <section class="info">
-      <Modes v-model="timer" />
+      <Modes v-model="timer" :timer="timer" />
       <p class="info__message">{{ this.message }}</p>
     </section>
     <div class="game__sound">
@@ -26,9 +26,9 @@
 </template>
 
 <script>
-import Audio from "../components/Audio.vue";
-import Boxes from "../components/Boxes.vue";
-import Modes from "../components/Modes.vue";
+import Audio from "./components/Audio.vue";
+import Boxes from "./components/Boxes.vue";
+import Modes from "./components/Modes.vue";
 
 export default {
   props: {
@@ -85,7 +85,7 @@ export default {
       setTimeout(() => {
         boxActive.isActive = false;
         this.sound = "";
-      }, this.timer - 100); // ???
+      }, this.timer - 100);
     },
     startRound() {
       this.isNeedClickHandler = false;
@@ -110,7 +110,6 @@ export default {
       this.round = 0;
       this.clickNumberInTheRound = 0;
       this.startRound();
-      // this.sound = "";
     },
     end() {
       this.message = `Sorry, you lost after ${this.round} rounds!`;

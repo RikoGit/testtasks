@@ -7,7 +7,7 @@ const rootDir = join(__dirname, "..");
 const staticDir = join(rootDir, ".");
 
 const testtask1 = {
-  entry: "./testtask1/index.js",
+  entry: "./form/index.js",
   mode: isDev ? "development" : "production",
   module: {
     rules: [
@@ -23,13 +23,13 @@ const testtask1 = {
   },
   output: {
     filename: "index.js",
-    path: join(staticDir, "testtask1/build"),
+    path: join(staticDir, "form/build"),
     publicPath: "/",
   },
 };
 
 const testtask2 = {
-  entry: "./testtask2/index.js",
+  entry: "./simon/index.js",
   mode: isDev ? "development" : "production",
   module: {
     rules: [
@@ -45,7 +45,7 @@ const testtask2 = {
   },
   output: {
     filename: "index.js",
-    path: join(staticDir, "testtask2/build"),
+    path: join(staticDir, "simon/build"),
     publicPath: "/",
   },
 };

@@ -2,13 +2,13 @@
   <div>
     <h2 class="info__header">Game mode:</h2>
     <ul class="modes">
-      <li class="modes__item" v-for="mode in modes" :key="mode.id">
-        <label class="modes__label" :for="mode.id">
+      <li class="modes__item" v-for="mode in modes" :key="mode.value">
+        <label class="modes__label">
           <input
-            :id="mode.id"
             type="radio"
             name="test"
             :value="mode.value"
+            :checked="timer === mode.value"
             v-on:input="$emit('input', $event.target.value)"
           />
           {{ mode.text }}
@@ -20,13 +20,13 @@
 
 <script>
 export default {
-  props: { mode: Object },
+  props: { mode: Object, timer: String },
   data() {
     return {
       modes: [
-        { id: "mode1", value: "1500", text: "easy" },
-        { id: "mode2", value: "1000", text: "middle" },
-        { id: "mode3", value: "400", text: "hard" },
+        { value: "1500", text: "easy" },
+        { value: "1000", text: "middle" },
+        { value: "400", text: "hard" },
       ],
     };
   },
